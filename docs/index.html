@@ -12,25 +12,17 @@
 </head>
 <body>
   <header class="hero"><div class="wrap">
-    <nav><span class="brand">Paper Formatter</span><a class="navlink" href="https://github.com/silenzio111/paper-formatter">GitHub ↗</a></nav>
-    <p class="eyebrow">DOCX formatting, made repeatable</p><h1>论文排版，不该靠一次次手工调整。</h1>
+    <nav><span class="brand">Paper Formatter</span><a class="navlink" href="https://github.com/silenzio111/paper-formatter">GitHub 源码 ↗</a></nav>
+    <p class="eyebrow">让 DOCX 排版成为可复用规则</p><h1>论文排版，不该靠一次次手工调整。</h1>
     <p class="lede">一款 macOS 原生工具，把页面、正文、标题、公式、表格和题注等格式要求保存成可复用的规则。</p>
     <div class="actions"><a class="button primary" href="https://github.com/silenzio111/paper-formatter">查看源代码</a><a class="button" href="#features">查看功能</a></div>
   </div></header>
   <main class="wrap">
-    <section id="features" class="intro"><h2>从文档结构出发，而不是逐段修补。</h2><p class="muted">Paper Formatter 读取 DOCX 的实际结构，识别不同对象后按规则处理，让同一套版式可复用、可检查、可迭代。</p></section>
-    <section class="grid">
-      <article class="card"><h3>结构化识别</h3><p>识别 1–6 级标题、Office Math 公式、表格、图表题、参考文献、图片、代码块和列表。</p></article>
-      <article class="card"><h3>规则可保存</h3><p>把字体、字号、行距、缩进、对齐和页面边距放进 JSON 配置，减少重复设置。</p></article>
-      <article class="card"><h3>保护原文件</h3><p>默认输出为 formatted 副本；覆盖原文档必须经过清晰的二次确认。</p></article>
-      <article class="card"><h3>公式有专门处理</h3><p>独立公式与行内公式分别处理，支持居中公式与右侧编号的常见论文排版需求。</p></article>
-      <article class="card"><h3>原生工作台</h3><p>SwiftUI 负责文件选择、规则编辑和状态展示；无需在多个脚本之间来回切换。</p></article>
-      <article class="card"><h3>保留已有内容</h3><p>在可处理的范围内保留图片、表格、页眉、脚注、尾注和批注等文档部件。</p></article>
-    </section>
-    <section class="banner"><div><h2>把“这篇论文怎么排”变成一份配置。</h2><p class="muted">规则和界面分开：在同一套规则结构上扩展页码、题注编号和期刊模板，不需要推倒已有工作流。</p></div><div class="facts"><div class="fact"><strong>SwiftUI</strong><span>原生 macOS 界面</span></div><div class="fact"><strong>Python</strong><span>DOCX 处理引擎</span></div><div class="fact"><strong>OOXML</strong><span>结构化操作</span></div><div class="fact"><strong>MIT</strong><span>开源许可</span></div></div></section>
-    <section><h2>构建</h2><p class="muted">在 macOS 上执行 <code>Scripts/build_native_app.sh</code>，再打开 Word Formatter.app。详情与配置示例见 README。</p></section>
+    <section id="features" class="intro"><h2>研发动机，是把论文中的重复劳动还给工具。</h2><p class="muted">论文排版常被误认为只是把字号、行距和边距调得一致，但真正耗时的部分来自文档内部对象各有不同的规则。标题需要层级，公式需要编号，表格与图片需要题注，参考文献、列表和代码块又各自有例外。面对几十页甚至上百页 DOCX，逐段检查不只是缓慢，也很难保证最后一轮修改不会让先前的格式重新失控。</p><p class="muted">Paper Formatter 因此不试图模拟一个更漂亮的 Word 面板，而是把“某类对象应当如何排”作为第一问题。它希望研究者能把学校、期刊或课题组的版式要求整理为一份可以复用的规则，在下一篇文档和下一次修改中继续使用，而不是从头再做一次人工巡检。</p></section>
+    <section class="intro"><h2>技术核心在于理解 DOCX 的结构，而不是只改可见文字。</h2><p class="muted">DOCX 本质上是包含大量 OOXML 部件的压缩包。正文段落、样式、表格、公式、图表题、页眉、脚注和批注并不处在同一层。项目会读取样式名称、纲目级别、段落标记和对象节点，识别一至六级标题、Office Math 公式、表格、参考文献、图片、列表和代码块，再把对应规则写回合适的位置。</p><p class="muted">默认处理引擎建立在 python-docx 之上，以便稳定读取和保存常见 Word 文档；对其不直接覆盖的公式和样式细节，则使用 OOXML 扩展进行处理。这种组合不是为了追求抽象层数，而是在“足够可靠地保存文档”和“能够处理论文特有对象”之间取得平衡。项目也刻意区分独立公式与行内公式，避免把数学内容当成普通字符而破坏布局。</p></section>
+    <section class="intro"><h2>原生界面与可移植规则各司其职。</h2><p class="muted">macOS 前端选择 SwiftUI，是因为文件选择、状态提示、规则编辑和权限反馈都更适合融入系统原生工作流。用户可以在同一个工作台中选择输入文件、查看识别到的对象、调节字体与间距，再决定执行全部规则或仅应用当前规则，而不必把文档拖进一个黑盒脚本后等待结果。</p><p class="muted">规则本身使用 JSON 保存。页面边距、字号、段前段后、首行缩进、行距和对齐方式都拥有明确单位；这使格式约定能被版本管理、分享和逐步扩展。未来无论加入页码、题注编号、院系模板还是期刊模板，扩展点都落在规则与识别逻辑上，而不需要把界面重新设计一遍。</p></section>
+    <section class="intro"><h2>对原文件保持克制，是排版工具必须承担的责任。</h2><p class="muted">自动格式化不应成为不可逆的改写。Paper Formatter 默认生成带有 formatted 后缀的副本，并尽量保留图片、表格、公式对象、页眉、脚注、尾注和批注部件。若确实需要以原文件名交付，应用会要求明确确认，并通过临时结果与可恢复的替换流程降低风险。</p><p class="muted">项目面向 macOS 开发。执行 <code>Scripts/build_native_app.sh</code> 可生成 Word Formatter.app；从源码运行时也可以使用 Swift Package Manager。README 记录了构建环境、两种排版引擎和配置示例。开源版本不附带个人论文样例，避免把原始文档或内部材料作为演示资产公开。</p></section>
   </main>
-  <footer class="wrap">Paper Formatter · MIT License · 本页为静态项目介绍</footer>
+  <footer class="wrap">Paper Formatter · MIT 开源许可 · 本页为静态项目介绍</footer>
 </body>
 </html>
-
