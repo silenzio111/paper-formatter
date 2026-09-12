@@ -1,0 +1,173 @@
+{
+  "body": {
+    "alignment": "justify",
+    "after": 9,
+    "before": 9,
+    "bold": false,
+    "first_line_indent": 24,
+    "font_name": "宋体",
+    "font_size": 12,
+    "italic": false,
+    "latin_font_name": "Times New Roman",
+    "line_spacing": 1.15
+  },
+  "caption": {
+    "alignment": "center",
+    "after": 4,
+    "before": 0,
+    "bold": true,
+    "first_line_indent": 0,
+    "font_name": "宋体",
+    "font_size": 10,
+    "italic": false,
+    "line_spacing": 1.15
+  },
+  "note": {
+    "alignment": "left",
+    "after": 4,
+    "before": 0,
+    "bold": false,
+    "first_line_indent": 0,
+    "font_name": "宋体",
+    "font_size": 10,
+    "italic": false,
+    "latin_font_name": "Times New Roman",
+    "line_spacing": 1
+  },
+  "code": {
+    "alignment": "left",
+    "after": 4,
+    "before": 4,
+    "bold": false,
+    "first_line_indent": 0,
+    "font_name": "Menlo",
+    "font_size": 9,
+    "italic": false,
+    "line_spacing": 1
+  },
+  "equation": {
+    "alignment": "center",
+    "after": 9,
+    "before": 9,
+    "bold": false,
+    "first_line_indent": 0,
+    "font_name": "Latin Modern Math",
+    "font_size": 11,
+    "italic": false,
+    "line_spacing": 1.15
+  },
+  "heading1": {
+    "alignment": "center",
+    "after": 4,
+    "before": 18,
+    "bold": true,
+    "first_line_indent": 0,
+    "font_name": "黑体",
+    "font_size": 20,
+    "italic": false,
+    "line_spacing": 1.15
+  },
+  "heading2": {
+    "alignment": "center",
+    "after": 0,
+    "before": 36,
+    "bold": true,
+    "first_line_indent": 0,
+    "font_name": "黑体",
+    "font_size": 16,
+    "italic": false,
+    "line_spacing": 1.15
+  },
+  "heading3": {
+    "alignment": "left",
+    "after": 0,
+    "before": 6,
+    "bold": true,
+    "first_line_indent": 0,
+    "font_name": "宋体",
+    "font_size": 14,
+    "italic": false,
+    "line_spacing": 1.15
+  },
+  "heading4": {
+    "alignment": "left",
+    "after": 2,
+    "before": 4,
+    "bold": true,
+    "first_line_indent": 0,
+    "font_name": "宋体",
+    "font_size": 12,
+    "italic": false,
+    "line_spacing": 1.15
+  },
+  "heading5": {
+    "alignment": "left",
+    "after": 2,
+    "before": 4,
+    "bold": true,
+    "first_line_indent": 0,
+    "font_name": "宋体",
+    "font_size": 11,
+    "italic": false,
+    "line_spacing": 1.15
+  },
+  "heading6": {
+    "alignment": "left",
+    "after": 0,
+    "before": 2,
+    "bold": true,
+    "first_line_indent": 0,
+    "font_name": "宋体",
+    "font_size": 10,
+    "italic": false,
+    "line_spacing": 1.15
+  },
+  "list": {
+    "alignment": "left",
+    "after": 0,
+    "before": 0,
+    "bold": false,
+    "first_line_indent": 0,
+    "font_name": "宋体",
+    "font_size": 12,
+    "italic": false,
+    "line_spacing": 1.15
+  },
+  "page": {
+    "margin_bottom": 2.54,
+    "margin_left": 3.18,
+    "margin_right": 3.18,
+    "margin_top": 2.54,
+    "paper_size": "LETTER"
+  },
+  "reference": {
+    "alignment": "left",
+    "after": 9,
+    "before": 9,
+    "bold": false,
+    "first_line_indent": 0,
+    "font_name": "宋体",
+    "font_size": 12,
+    "italic": false,
+    "latin_font_name": "Times New Roman",
+    "line_spacing": 1.15
+  },
+  "table": {
+    "alignment": "center",
+    "after": 0,
+    "auto_width_max_columns": 3,
+    "before": 0,
+    "bold": false,
+    "first_line_indent": 0,
+    "font_name": "宋体",
+    "font_size": 9,
+    "header_bold": true,
+    "italic": false,
+    "latin_font_name": "Latin Modern Math",
+    "line_spacing": 1.5,
+    "paragraph_style_id": "Compact",
+    "style_id": "af2",
+    "width_mode": "percentage",
+    "width_percent": 100
+  }
+}

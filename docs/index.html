@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Paper Formatter：面向论文 DOCX 的 macOS 原生排版工具。">
+  <title>Paper Formatter · 让论文排版成为可复用的规则</title>
+  <style>
+    :root { --ink:#182033; --muted:#6f7786; --paper:#fbfaf7; --line:#e8e3db; --accent:#b14d35; --dark:#292034; }
+    *{box-sizing:border-box} body{margin:0;color:var(--ink);background:var(--paper);font:16px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",sans-serif}.wrap{width:min(1100px,calc(100% - 40px));margin:auto}nav{display:flex;justify-content:space-between;align-items:center;padding:25px 0}.brand{font-weight:800;letter-spacing:-.03em}.navlink{color:#eee7e4;text-decoration:none;font-size:.94rem}.hero{color:white;background:radial-gradient(circle at 83% 18%,#be7655 0,transparent 26%),linear-gradient(135deg,#292034,#523b41);padding:74px 0 82px}.eyebrow{color:#f3c9ae;text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;font-weight:800}h1{max-width:800px;margin:12px 0 18px;font-size:clamp(2.7rem,8vw,5.5rem);line-height:1.03;letter-spacing:-.065em}.lede{max-width:620px;margin:0;color:#eadeda;font-size:1.17rem}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}.button{display:inline-block;padding:11px 17px;border:1px solid rgba(255,255,255,.35);border-radius:999px;color:white;text-decoration:none;font-weight:700}.button.primary{background:white;color:var(--dark);border-color:white}main{padding:64px 0}.intro{max-width:720px;margin-bottom:35px}h2{margin:0 0 10px;font-size:1.85rem;letter-spacing:-.04em}.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{padding:23px;border:1px solid var(--line);border-radius:18px;background:white}.card h3{margin:0 0 7px;font-size:1.03rem}.card p{margin:0;color:var(--muted);font-size:.94rem}.banner{display:grid;grid-template-columns:1.25fr .75fr;gap:25px;align-items:center;margin:52px 0;padding:30px;border-radius:22px;background:#f5e9e2}.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.fact{padding:15px;border-radius:14px;background:white}.fact strong{display:block;font-size:1.1rem}.fact span{color:var(--muted);font-size:.83rem}code{padding:2px 5px;border-radius:5px;background:#eee8e8;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.88em}footer{padding:30px 0 45px;color:var(--muted);font-size:.88rem}@media(max-width:700px){.grid,.banner{grid-template-columns:1fr}nav{padding:19px 0}.hero{padding:55px 0 62px}main{padding:45px 0}}
+  </style>
+</head>
+<body>
+  <header class="hero"><div class="wrap">
+    <nav><span class="brand">Paper Formatter</span><a class="navlink" href="https://github.com/silenzio111/paper-formatter">GitHub ↗</a></nav>
+    <p class="eyebrow">DOCX formatting, made repeatable</p><h1>论文排版，不该靠一次次手工调整。</h1>
+    <p class="lede">一款 macOS 原生工具，把页面、正文、标题、公式、表格和题注等格式要求保存成可复用的规则。</p>
+    <div class="actions"><a class="button primary" href="https://github.com/silenzio111/paper-formatter">查看源代码</a><a class="button" href="#features">查看功能</a></div>
+  </div></header>
+  <main class="wrap">
+    <section id="features" class="intro"><h2>从文档结构出发，而不是逐段修补。</h2><p class="muted">Paper Formatter 读取 DOCX 的实际结构，识别不同对象后按规则处理，让同一套版式可复用、可检查、可迭代。</p></section>
+    <section class="grid">
+      <article class="card"><h3>结构化识别</h3><p>识别 1–6 级标题、Office Math 公式、表格、图表题、参考文献、图片、代码块和列表。</p></article>
+      <article class="card"><h3>规则可保存</h3><p>把字体、字号、行距、缩进、对齐和页面边距放进 JSON 配置，减少重复设置。</p></article>
+      <article class="card"><h3>保护原文件</h3><p>默认输出为 formatted 副本；覆盖原文档必须经过清晰的二次确认。</p></article>
+      <article class="card"><h3>公式有专门处理</h3><p>独立公式与行内公式分别处理，支持居中公式与右侧编号的常见论文排版需求。</p></article>
+      <article class="card"><h3>原生工作台</h3><p>SwiftUI 负责文件选择、规则编辑和状态展示；无需在多个脚本之间来回切换。</p></article>
+      <article class="card"><h3>保留已有内容</h3><p>在可处理的范围内保留图片、表格、页眉、脚注、尾注和批注等文档部件。</p></article>
+    </section>
+    <section class="banner"><div><h2>把“这篇论文怎么排”变成一份配置。</h2><p class="muted">规则和界面分开：在同一套规则结构上扩展页码、题注编号和期刊模板，不需要推倒已有工作流。</p></div><div class="facts"><div class="fact"><strong>SwiftUI</strong><span>原生 macOS 界面</span></div><div class="fact"><strong>Python</strong><span>DOCX 处理引擎</span></div><div class="fact"><strong>OOXML</strong><span>结构化操作</span></div><div class="fact"><strong>MIT</strong><span>开源许可</span></div></div></section>
+    <section><h2>构建</h2><p class="muted">在 macOS 上执行 <code>Scripts/build_native_app.sh</code>，再打开 Word Formatter.app。详情与配置示例见 README。</p></section>
+  </main>
+  <footer class="wrap">Paper Formatter · MIT License · 本页为静态项目介绍</footer>
+</body>
+</html>
+

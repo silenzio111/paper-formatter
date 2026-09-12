@@ -1,0 +1,15 @@
+# Swift build products
+.build/
+.swiftpm/
+*.app/
+
+# Python caches
+__pycache__/
+*.py[cod]
+
+# The supplied DOCX files are local reference material, not release assets.
+排版样例与原始导出/
+README.pdf
+
+# macOS
+.DS_Store
